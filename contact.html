@@ -21,31 +21,33 @@ permalink: /contact/
 <section id="contact-form">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-sm-12">
-        <div class="block">
-          <form>
+      <form action="https://formspree.io/your@email.com"
+            method="POST">
+        <div class="col-md-6 col-sm-12">
+          <div class="block">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
+              <input type="text" name="name"
+                     class="form-control" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email Address">
+              <input type="email" name="_replyto"
+                     class="form-control" placeholder="Email Address">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject">
+              <input type="text" name="_subject"
+                     class="form-control" placeholder="Subject">
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="block">
-          <form>
+        <div class="col-md-6 col-sm-12">
+          <div class="block">
             <div class="form-group-2">
-              <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
+              <textarea class="form-control" rows="3" placeholder="Your Message" name="message"></textarea>
             </div>
             <button class="btn btn-default" type="submit">Send Message</button>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
     <div id="contact-box" class="row">
       <div class="col-md-6 col-sm-12">
@@ -91,9 +93,11 @@ permalink: /contact/
       <div class="col-md-6 col-sm-12">
         <div class="block">
           <h2>We Also Count In Google Map</h2>
-            <div class="google-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7242.012020020517!2d67.06093283244964!3d24.82946808406859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33c413ada5af9%3A0xe7c88f928a6f53c2!2sJami+Staff+Lane+1%2C+Karachi%2C+Pakistan!5e0!3m2!1sen!2sca!4v1494465038257" width="555" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+          <div class="google-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7242.012020020517!2d67.06093283244964!3d24.82946808406859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33c413ada5af9%3A0xe7c88f928a6f53c2!2sJami+Staff+Lane+1%2C+Karachi%2C+Pakistan!5e0!3m2!1sen!2sca!4v1494465038257"
+                width="555" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -106,8 +110,9 @@ permalink: /contact/
       <div class="col-md-12">
         <div class="block">
           <h2>We design delightful digital experiences.</h2>
-          <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design.</p>
-          <a class="btn btn-default btn-call-to-action" href="#" >Tell Us Your Story</a>
+          <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team
+            who just love to design.</p>
+          <a class="btn btn-default btn-call-to-action" href="#">Tell Us Your Story</a>
         </div>
       </div>
     </div>
