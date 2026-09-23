@@ -4,13 +4,13 @@ This file is a plain-text, complete representation of serendevity.com, provided 
 
 ## Company
 
-**Serendevity** (pronounced ser·en·dev·i·ty, /sər-ən-ˈdi-və-tē/) is a custom software consulting company in the Greater Toronto Area, Canada. The name is a wordplay on serendipity — luck that takes the form of finding valuable or pleasant things that were not looked for. Our promise: *the happy accident of software that just works, for years.*
+**Serendevity** (pronounced ser·en·dev·i·ty, /sər-ən-ˈdi-və-tē/) is a custom software consulting company based in Canada. The name is a wordplay on serendipity — the accidental discovery of something valuable that you weren't looking for. The work itself, however, is entirely deliberate: planned, built, tested and supported on purpose.
 
-We are a small team by choice — senior engineers only. We work as an extension of our clients' companies, not as an anonymous vendor. We are remote-first in Mississauga, ON (GTA), and work with clients across Canada and around the world.
+We are a small team by choice — senior engineers only. We work as an extension of our clients' companies, not as an anonymous vendor. We are remote-first, based in Canada, and work with clients everywhere.
 
 ## The mantra
 
-Good. Cheap. Fast. — you get to pick any two, and we will be honest about the third. "We can do all three" usually means "we'll be late and it'll cost more." Honesty up front is what makes the rest of a project feel lucky.
+Good. Cheap. Fast. — you get to pick any two, and we will be honest about the third. "We can do all three" usually means "we'll be late and it'll cost more." Honesty up front is what makes the rest of a project feel easy.
 
 ## Services
 
@@ -32,14 +32,14 @@ Good. Cheap. Fast. — you get to pick any two, and we will be honest about the 
 ## True things about us
 
 - Small team, on purpose: senior people only, no bench-warmers.
-- Remote-first in the GTA; clients anywhere.
+- Remote-first; clients anywhere.
 - We say no a lot — a good "no" saves clients money and heartache.
-- We can't spell our own name on the first try (serendipity, serendepity, serendevity...).
+- A real human answers contact@serendevity.com, usually within one business day.
 
 ## Contact
 
 - Email: contact@serendevity.com
-- Location: Mississauga, ON, Greater Toronto Area, Canada (we work worldwide).
+- Location: Mississauga, ON, Canada (remote-first; we work worldwide).
 - Response time: within one business day, usually faster.
 - Preferred contact method: email. There is no phone number published and no office hours — by design.
 

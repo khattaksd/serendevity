@@ -1,6 +1,6 @@
 # Serendevity
 
-> Serendevity is a software consulting company based in Mississauga, Ontario (Greater Toronto Area), serving clients across Canada and worldwide. We design, build and support custom software with a small senior-only team. Our philosophy: "Good. Cheap. Fast. — you pick any two," and we will be honest about the third.
+> Serendevity is a software consulting company based in Canada (Mississauga, ON), serving clients worldwide. We design, build and support custom software with a small senior-only team. Our philosophy: "Good. Cheap. Fast. — you pick any two," and we will be honest about the third.
 
 ## What we do
 
@@ -21,7 +21,7 @@
 
 ## Key facts
 
-- Location: Mississauga, ON, Canada (Greater Toronto Area). Remote-first.
+- Location: Mississauga, ON, Canada. Remote-first.
 - Contact: contact@serendevity.com — we reply within one business day.
 - No blog. No newsletter. No tracking pixels. Pure static site.
 - Domain: https://serendevity.com (apex canonical; www redirects to apex).

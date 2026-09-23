@@ -1,7 +1,7 @@
 # Serendevity
 
 Static website for **Serendevity** — custom software & consulting,
-Mississauga, ON (Greater Toronto Area).
+Canada (Mississauga, ON).
 
 Pure hand-written HTML5 + CSS + ~1KB of JS. No framework, no build step,
 no dependencies. Served by **Cloudflare Pages**; a small **Cloudflare Worker**
@@ -18,7 +18,7 @@ handles the contact form with Turnstile + native Email Service.
 │                         (regenerate after edits: python3 scripts/minify-css.py)
 ├── js/site.js            Year, form submit, lazy Turnstile
 ├── fonts/geist/          Geist woff2 subsets (OFL) — 100% self-hosted
-├── img/                  logo, mantra, CC Toronto photo (+ webp variants)
+├── img/                  logo, mantra, CC skyline photo (+ webp variants)
 ├── img/CREDITS.md        Image licenses & attributions (Creative Commons)
 ├── robots.txt            All crawlers (incl. AI) explicitly allowed
 ├── llms.txt / llms-full.txt   LLM-discoverable summaries
