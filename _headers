@@ -1,4 +1,5 @@
 # Cloudflare Pages headers — https://developers.cloudflare.com/pages/configuration/headers/
+# NOTE: Pages does NOT support multi-line header values; keep values single-line.
 
 # Security headers + CSP across the site
 /*
@@ -6,16 +7,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; \
-    script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com; \
-    style-src 'self' 'unsafe-inline'; \
-    img-src 'self' data:; \
-    font-src 'self'; \
-    connect-src 'self' https://challenges.cloudflare.com; \
-    frame-src https://challenges.cloudflare.com; \
-    frame-ancestors 'self'; \
-    form-action 'self'; \
-    upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'self'; form-action 'self'; upgrade-insecure-requests
 
 # Static assets: cache forever (immutable — filenames change on redeploy)
 /fonts/*
