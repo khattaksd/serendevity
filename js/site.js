@@ -5,9 +5,44 @@
 (function () {
   "use strict";
 
-  /* Current year in footers */
+  document.documentElement.classList.add("js");
+
+  /* ----- Scroll reveal (CSS transitions; respects reduced motion) ----- */
+  var prefersReduced = false;
+  try {
+    prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch (e) { /* old browsers */ }
+
+  if (!prefersReduced && "IntersectionObserver" in window) {
+    var reveals = document.querySelectorAll(".reveal");
+    if (reveals.length) {
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      reveals.forEach(function (el) { io.observe(el); });
+      /* Safety net: if anything is still hidden shortly after load (e.g. an
+         observer edge case), reveal it rather than leaving the page blank. */
+      window.setTimeout(function () {
+        reveals.forEach(function (el) { el.classList.add("in-view"); });
+      }, 4000);
+    }
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      el.classList.add("in-view");
+    });
+  }
+
+  /* ----- Current year in footers ----- */
   var yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear ? new Date().getFullYear() : 2026);
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   /* ----- Turnstile: load the widget only when the visitor engages with the form ----- */
   var widget = document.querySelector(".cf-turnstile");
@@ -25,7 +60,7 @@
     }
     if (form) {
       ["pointerdown", "focusin", "keydown"].forEach(function (ev) {
-        form.addEventListener(ev, loadTurnstile, { passive: true, once: false });
+        form.addEventListener(ev, loadTurnstile, { passive: true });
       });
     } else {
       loadTurnstile();

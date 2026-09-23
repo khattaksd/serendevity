@@ -18,7 +18,7 @@ handles the contact form with Turnstile + native Email Service.
 │                         (regenerate after edits: python3 scripts/minify-css.py)
 ├── js/site.js            Year, form submit, lazy Turnstile
 ├── fonts/geist/          Geist woff2 subsets (OFL) — 100% self-hosted
-├── img/                  logo, mantra, CC skyline photo (+ webp variants)
+├── img/                  logo, mantra, CC Toronto photo (+ webp variants)
 ├── img/CREDITS.md        Image licenses & attributions (Creative Commons)
 ├── robots.txt            All crawlers (incl. AI) explicitly allowed
 ├── llms.txt / llms-full.txt   LLM-discoverable summaries
@@ -76,9 +76,10 @@ python3 scripts/minify-css.py     # after editing css/styles.css
 ## Validation targets
 
 - HTML5: `npx html-validate index.html contact.html 404.html` + manual W3C Nu check.
-- Lighthouse: 4×100 on the deployed site (kept achievable by: no framework,
-  self-hosted fonts/images, lazy images, no render-blocking third-party,
-  strict CSP, semantic/accessible markup).
+- Lighthouse: 4×100 on the deployed site (verified locally: Home, Contact, and 404 each
+  score 100 in accessibility / best-practices / SEO, performance 100 on Home & Contact
+  with compression+cache headers — see `scripts/serve-live.py`; final numbers after
+  deploy on real CDN).
 - Contrast: all body text pairs ≥ 4.5:1 (see tokens in `css/styles.css`).
 
 ## License

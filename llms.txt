@@ -33,4 +33,4 @@
 
 ## License & attribution
 
-Site code and copy © Serendevity. Photography from Wikimedia Commons (CC0 / CC BY-SA), credited in `img/CREDITS.md`. Font: Geist (OFL-1.1).
+Site code and copy © Serendevity. Photography from Wikimedia Commons (CC BY 2.0, credited in `img/CREDITS.md`); icons Lucide (ISC); font Geist (OFL-1.1).
