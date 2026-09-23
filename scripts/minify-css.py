@@ -9,5 +9,7 @@ out = re.sub(r"\s*([{}:;,>~+])\s*", r"\1", out)
 out = re.sub(r"\s*\(\s*", "(", out)
 out = re.sub(r"\s*\)\s*", ")", out)
 out = "/* generated from css/styles.css (source of truth) via scripts/minify-css.py */\n" + out.strip() + "\n"
+if len(out) < max(1000, len(src) // 2):
+    raise SystemExit(f"refusing to write suspiciously small output ({len(out)} bytes) — is styles.css intact?")
 open("css/styles.min.css", "w").write(out)
 print(f"css/styles.min.css written ({len(out)} bytes)")
