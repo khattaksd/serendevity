@@ -412,35 +412,6 @@ html.js .reveal.in-view {
   );
   animation: sun-breathe 11s ease-in-out infinite;
 }
-.cloud {
-  position: absolute;
-  width: 340px;
-  height: 96px;
-  border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0.12) 55%, rgba(255, 255, 255, 0) 78%);
-  pointer-events: none;
-  animation: cloud-bob 32s ease-in-out infinite;
-}
-.cloud.c1 {
-  top: 16%;
-  left: -6%;
-  animation-duration: 34s;
-}
-.cloud.c2 {
-  top: 52%;
-  left: 62%;
-  width: 280px;
-  height: 78px;
-  animation-duration: 44s;
-}
-.cloud.c3 {
-  top: 74%;
-  left: 18%;
-  width: 200px;
-  height: 58px;
-  opacity: 0.55;
-  animation-duration: 27s;
-}
 .hero-inner {
   position: relative;
   z-index: 1;
@@ -528,7 +499,6 @@ html.js .reveal.in-view {
 }
 @media (prefers-reduced-motion: reduce) {
   .sun,
-  .cloud,
   .glass-card {
     animation: none;
   }
@@ -543,18 +513,6 @@ html.js .reveal.in-view {
   }
   50% {
     transform: translateY(-7px);
-  }
-}
-@keyframes cloud-bob {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(14px, -6px) scale(1.03);
-  }
-  60% {
-    transform: translate(-10px, 4px) scale(0.98);
   }
 }
 @keyframes sun-breathe {
