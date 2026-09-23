@@ -1,0 +1,23 @@
+# humans.txt
+
+Hi there, actual human.
+
+You found the secret file that only shows up if you're curious enough to look.
+Fair play. Here's the tour:
+
+- You are on the website of Serendevity — a small software consulting company
+  in Mississauga, ON (that's in Canada, near Toronto).
+- We build web apps, mobile apps, APIs, cloud stuff, and now and then we teach
+  robots to be helpful.
+- There is no blog, because there are no ~10,000 words~ blog posts. There is
+  email: contact@serendevity.com. A real person reads it, usually the same day.
+- The site is one HTML file, one CSS file, one tiny JS file. No tracking,
+  no cookies, no "subscribe to our newsletter" popups. It's 2026 and we
+  decided that was the vibe.
+- Meanwhile, the nerds among you can read robots.txt and llms.txt — yes, that
+  file is for the search-bots' owners, this one is for you.
+
+If you got here by typing /humans.txt by hand: you're our kind of person.
+Email us and mention the magic word "serendipity" — points guaranteed.
+
+— The humans at Serendevity

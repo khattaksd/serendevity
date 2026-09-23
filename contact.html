@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Serendevity</title>
+  <meta name="description" content="Get in touch with Serendevity: one email, one honest reply. We are based in Mississauga, ON (Greater Toronto Area) and work with clients worldwide.">
+  <meta name="author" content="Serendevity">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://serendevity.com/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Serendevity">
+  <meta property="og:title" content="Contact — Serendevity">
+  <meta property="og:description" content="One email, one honest reply. Serendevity — Mississauga, ON (Greater Toronto Area) and worldwide.">
+  <meta property="og:url" content="https://serendevity.com/contact">
+  <meta property="og:image" content="https://serendevity.com/img/toronto-skyline-night.jpg">
+  <meta property="og:image:alt" content="Toronto skyline at night">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact — Serendevity">
+  <meta name="twitter:description" content="One email, one honest reply. Serendevity — Mississauga, ON (Greater Toronto Area) and worldwide.">
+  <meta name="theme-color" content="#fbf7f0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="preload" href="fonts/geist/latin.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container hdr">
+    <a class="brand" href="index.html" aria-label="Serendevity — home">
+      <img src="img/logo.png" alt="Serendevity logo" width="208" height="60">
+    </a>
+    <nav aria-label="Primary">
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <div class="nav-links">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">How we work</a>
+          <a href="index.html#mantra">The mantra</a>
+          <a href="index.html#truths">Why Serendevity</a>
+          <a class="btn btn-primary btn-sm" href="contact.html">Say hello</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Say hello — no forms longer than they need to be.</h1>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-title">
+    <div class="container contact-grid">
+      <form class="form-panel" id="contact-form" action="/api/contact" method="post" aria-labelledby="form-title">
+        <h2 id="form-title" class="visually-hidden">Send us a message</h2>
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="f-name">Name <span aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="120" spellcheck="true">
+          </div>
+          <div class="form-field">
+            <label for="f-company">Company <span class="visually-hidden">(optional)</span></label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" maxlength="120" spellcheck="true">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-email">Email <span aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="254" spellcheck="false">
+          </div>
+          <div class="form-field">
+            <label for="f-message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" rows="6" required maxlength="4000" spellcheck="true" placeholder="What are you building — or what's on fire?"></textarea>
+          </div>
+          <!-- Honeypot: real humans never see it. Bots love it. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="f-company-url">Company URL</label>
+            <input id="f-company-url" name="company_url" type="url" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-action="serendevity_contact" data-theme="light"></div>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <div class="form-success" id="form-success" role="status">
+            <strong>Thanks — it's in our inbox.</strong> We reply within one business day, usually faster. If it's urgent, nothing is faster than emailing us directly.
+          </div>
+          <button class="btn btn-primary form-submit" type="submit">Send message</button>
+          <p class="form-privacy">No tracking pixels, no newsletter checkbox, no “keep in touch” guilt. Your message goes straight to <a href="mailto:contact@serendevity.com">contact@serendevity.com</a> and nowhere else. Protected by a Cloudflare challenge — the friendly one.</p>
+        </div>
+      </form>
+
+      <div class="info-panel">
+        <div class="info-card">
+          <h2>Email</h2>
+          <p><a class="mono" href="mailto:contact@serendevity.com">contact@serendevity.com</a></p>
+        </div>
+        <div class="info-card">
+          <h2>Response time</h2>
+          <p>Within one business day — unless we're elbow-deep in a production issue or a <em>very</em> good crossword.</p>
+        </div>
+        <div class="info-card">
+          <h2>Location</h2>
+          <p>Mississauga, ON · Greater Toronto Area · Canada. We work with clients anywhere — the internet makes geography negotiable.</p>
+        </div>
+        <figure class="map-figure">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Stylized map of the Greater Toronto Area with a pin in Mississauga">
+            <defs>
+              <linearGradient id="map-lake" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2aa79a"/>
+                <stop offset="1" stop-color="#123a3f"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="420" fill="#f3ecdf"/>
+            <rect x="0" y="300" width="640" height="120" fill="url(#map-lake)"/>
+            <path d="M0 300 Q 80 282 180 296 T 320 280 T 460 294 T 600 284 T 640 290 L 640 420 L 640 420 Z" fill="url(#map-lake)"/>
+            <path d="M-10 180 h 330 M320 220 h 330" fill="none" stroke="#e9a83b" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 16" opacity="0.9"/>
+            <path d="M130 250 v -52 M150 250 v -150" fill="none" stroke="#e9a83b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <g>
+              <circle cx="452" cy="252" r="9" fill="#c74e2e"/>
+              <text x="452" y="228" text-anchor="middle" font-family="Geist, sans-serif" font-size="20" font-weight="700" fill="#26303a">Toronto</text>
+            </g>
+            <g>
+              <circle cx="128" cy="246" r="22" fill="#14837e" opacity="0.18"/>
+              <circle cx="128" cy="246" r="30" fill="none" stroke="#14837e" stroke-width="1.5" opacity="0.35"/>
+              <circle cx="128" cy="246" r="10" fill="#14837e"/>
+              <circle cx="128" cy="246" r="4" fill="#fbf7f0"/>
+              <text x="128" y="290" text-anchor="middle" font-family="Geist, sans-serif" font-size="22" font-weight="800" fill="#123a3f">Mississauga, ON</text>
+              <text x="128" y="312" text-anchor="middle" font-family="Geist, sans-serif" font-size="15" fill="#5e6b74">that's us, roughly</text>
+            </g>
+            <g transform="translate(592 64)">
+              <path d="M0 0 l0 -18 M0 -16 l7 7 M0 -16 l-7 7" fill="none" stroke="#c74e2e" stroke-width="3" stroke-linecap="round"/>
+              <text x="10" y="-6" font-family="Geist, sans-serif" font-size="14" font-weight="700" fill="#c74e2e">N</text>
+            </g>
+            <text x="24" y="400" font-family="Geist, sans-serif" font-size="13" fill="#5e6b74">Not to scale. Perhaps whimsically so.</text>
+          </svg>
+          <figcaption>A friendly approximation of Lake Ontario and the 401 — the pin is the part that's accurate.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Serendevity — home">
+          <img src="img/logo.png" alt="Serendevity logo" width="208" height="60">
+        </a>
+        <p>Software consulting in the Greater Toronto Area. Good. Cheap. Fast. — you pick two.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#process">How we work</a></li>
+          <li><a href="index.html#mantra">The mantra</a></li>
+          <li><a href="index.html#truths">Why Serendevity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Say hi</h3>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mailto:contact@serendevity.com">contact@serendevity.com</a></li>
+        </ul>
+        <p>Mississauga, ON · Greater Toronto Area · Canada</p>
+      </div>
+      <div class="footer-col">
+        <h3>Fine print</h3>
+        <ul>
+          <li><a href="humans.txt">For humans</a></li>
+          <li><a href="llms.txt">For language models</a></li>
+          <li><a href="sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Serendevity. All rights reserved.</p>
+      <p>Made with ☕ in Mississauga.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>

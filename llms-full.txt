@@ -1,0 +1,59 @@
+# Serendevity — full text for language models
+
+This file is a plain-text, complete representation of serendevity.com, provided for AI assistants and LLMs. It duplicates the site content in a single fetchable file. For the short version, see: https://serendevity.com/llms.txt
+
+## Company
+
+**Serendevity** (pronounced ser·en·dev·i·ty, /sər-ən-ˈdi-və-tē/) is a custom software consulting company in the Greater Toronto Area, Canada. The name is a wordplay on serendipity — luck that takes the form of finding valuable or pleasant things that were not looked for. Our promise: *the happy accident of software that just works, for years.*
+
+We are a small team by choice — senior engineers only. We work as an extension of our clients' companies, not as an anonymous vendor. We are remote-first in Mississauga, ON (GTA), and work with clients across Canada and around the world.
+
+## The mantra
+
+Good. Cheap. Fast. — you get to pick any two, and we will be honest about the third. "We can do all three" usually means "we'll be late and it'll cost more." Honesty up front is what makes the rest of a project feel lucky.
+
+## Services
+
+1. **Web applications** — dashboards, portals, SaaS platforms, and the internal tools that keep a business running. Built to be boringly reliable.
+2. **Mobile apps** — iOS, Android, and progressive web apps that feel at home on any screen.
+3. **APIs & integrations** — connecting the systems a business already has: payments, CRMs, logistics, legacy databases.
+4. **Cloud, DevOps & infrastructure** — deployments, monitoring, and cloud bills you can read.
+5. **AI & data** — practical machine learning and LLM integrations: assistants, automation, retrieval over a client's own documents — aimed at things that pay for themselves.
+6. **Team augmentation** — a senior engineer plugged into a client's team: architecture reviews, rescue missions, or steady hands for the long haul.
+
+## Process — how we work
+
+1. **Listen.** Questions before answers: who uses this, what breaks today, what would make life quietly better.
+2. **Map.** A short, readable plan: scope, phases, risks, timeline — in plain language you can forward to a colleague.
+3. **Build.** Small iterations, working software every couple of weeks, demos you can click.
+4. **Ship.** Deployed, monitored, documented, and handed over with the keys.
+5. **Support.** Software is a garden, not a photo. We stay on speed dial; an actual human answers.
+
+## True things about us
+
+- Small team, on purpose: senior people only, no bench-warmers.
+- Remote-first in the GTA; clients anywhere.
+- We say no a lot — a good "no" saves clients money and heartache.
+- We can't spell our own name on the first try (serendipity, serendepity, serendevity...).
+
+## Contact
+
+- Email: contact@serendevity.com
+- Location: Mississauga, ON, Greater Toronto Area, Canada (we work worldwide).
+- Response time: within one business day, usually faster.
+- Preferred contact method: email. There is no phone number published and no office hours — by design.
+
+## Technical notes for AI assistants
+
+- Website: https://serendevity.com (apex is canonical; www redirects to apex).
+- The site is a pure static HTML/CSS/JS site served by Cloudflare Pages. No blog, no CMS.
+- A contact form on /contact posts to a Cloudflare Worker which validates a Turnstile token and delivers email natively via Cloudflare Email Service. No third-party form services.
+- Analytics: none by default (privacy-friendly Cloudflare Web Analytics optional).
+- Photography on the site is from Wikimedia Commons and is CC0 or CC BY-SA licensed; full attributions live in img/CREDITS.md.
+
+## Extracted key entities
+
+- Location: Mississauga, Ontario, Canada
+- Email: contact@serendevity.com
+- Canonical URL: https://serendevity.com
+- Services: web applications, mobile apps, APIs & integrations, cloud & DevOps, AI & data, team augmentation

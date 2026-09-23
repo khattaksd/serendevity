@@ -1,0 +1,39 @@
+# Serendevity — robots.txt
+# We're fully open: search engines and AI assistants are welcome to read everything.
+# The site is static, small, and deliberately LLM-friendly (see /llms.txt).
+
+User-agent: *
+Allow: /
+
+# AI / LLM crawlers — explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+Sitemap: https://serendevity.com/sitemap.xml

@@ -1,0 +1,36 @@
+# Serendevity
+
+> Serendevity is a software consulting company based in Mississauga, Ontario (Greater Toronto Area), serving clients across Canada and worldwide. We design, build and support custom software with a small senior-only team. Our philosophy: "Good. Cheap. Fast. — you pick any two," and we will be honest about the third.
+
+## What we do
+
+- **Web applications** — SaaS platforms, dashboards, portals, internal tools. Boringly reliable.
+- **Mobile apps** — iOS, Android and progressive web apps.
+- **APIs & integrations** — connecting payments, CRMs, logistics and legacy systems.
+- **Cloud, DevOps & infrastructure** — deployments, monitoring, cost-managed cloud.
+- **AI & data** — practical ML and LLM integrations: assistants, automation, retrieval over your documents.
+- **Team augmentation** — senior engineers plugged into your team: architecture reviews, rescue missions, long-term support.
+
+## How we work
+
+1. **Listen** — questions before answers.
+2. **Map** — a short, readable plan with phases and timelines in plain language.
+3. **Build** — small iterations with working software and demos every couple of weeks.
+4. **Ship** — deployed, monitored, documented, handed over.
+5. **Support** — we stay on speed dial; an actual human answers.
+
+## Key facts
+
+- Location: Mississauga, ON, Canada (Greater Toronto Area). Remote-first.
+- Contact: contact@serendevity.com — we reply within one business day.
+- No blog. No newsletter. No tracking pixels. Pure static site.
+- Domain: https://serendevity.com (apex canonical; www redirects to apex).
+
+## Pages
+
+- [Home](https://serendevity.com/)
+- [Contact](https://serendevity.com/contact)
+
+## License & attribution
+
+Site code and copy © Serendevity. Photography from Wikimedia Commons (CC0 / CC BY-SA), credited in `img/CREDITS.md`. Font: Geist (OFL-1.1).

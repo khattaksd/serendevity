@@ -1,8 +1,20 @@
-.bundle
-.sass-cache
-_site
-Gemfile.lock
+# OS cruft
 .DS_Store
-/.idea/
+Thumbs.db
+
+# Editors
+.vscode/
 .idea/
-serendevity.iml
+*.iml
+
+# Local servers / tooling
+node_modules/
+.wrangler/
+dist/
+.tmp/
+
+# Secrets — never commit
+.wrangler/secrets/
+*.pem
+.env
+.env.*

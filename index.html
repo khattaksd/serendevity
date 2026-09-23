@@ -1,227 +1,413 @@
----
-layout: page
-title: Home
-permalink: /
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serendevity — Custom Software &amp; Consulting, GTA</title>
+  <meta name="description" content="Serendevity is a software consulting company in the Greater Toronto Area: senior-only teams for web apps, mobile, APIs, cloud, AI and long-term support. Good. Cheap. Fast — you pick two.">
+  <meta name="author" content="Serendevity">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://serendevity.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Serendevity">
+  <meta property="og:title" content="Serendevity — Custom Software &amp; Consulting, GTA">
+  <meta property="og:description" content="Senior-only software consulting: web apps, mobile, APIs, cloud, AI and support that actually lasts. Good. Cheap. Fast — you pick two.">
+  <meta property="og:url" content="https://serendevity.com/">
+  <meta property="og:image" content="https://serendevity.com/img/toronto-skyline-night.jpg">
+  <meta property="og:image:alt" content="Toronto skyline at night">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Serendevity — Custom Software &amp; Consulting, GTA">
+  <meta name="twitter:description" content="Senior-only software consulting: web apps, mobile, APIs, cloud, AI and support that actually lasts. Good. Cheap. Fast — you pick two.">
+  <meta name="twitter:image" content="https://serendevity.com/img/toronto-skyline-night.jpg">
+  <meta name="theme-color" content="#fbf7f0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="preload" href="fonts/geist/latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://serendevity.com/#business",
+    "name": "Serendevity",
+    "alternateName": "Serendevity Inc.",
+    "description": "Software consulting company in the Greater Toronto Area: custom web and mobile applications, APIs and integrations, cloud and DevOps, AI and data, and long-term team augmentation.",
+    "url": "https://serendevity.com/",
+    "logo": "https://serendevity.com/img/logo.png",
+    "image": "https://serendevity.com/img/toronto-skyline-night.jpg",
+    "email": "contact@serendevity.com",
+    "telephone": "",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mississauga",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "areaServed": [
+      "Toronto",
+      "Greater Toronto Area",
+      "Ontario",
+      "Canada"
+    ],
+    "openingHours": "Mo-Fr 09:00-17:00",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<!-- Slider Start -->
-<section id="slider">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-2">
-        <div class="block">
-          <h1 class="animated fadeInUp">A SOFTWARE DESIGN &#38 <br>DEVELOPMENT AGENCY</h1>
-          <p class="animated fadeInUp">We love the work we do. We love the people we work with. We work hard to make sure we deliver the best possible solution ... every time!</p>
+<header class="site-header">
+  <div class="container hdr">
+    <a class="brand" href="index.html" aria-label="Serendevity — home">
+      <img src="img/logo.png" alt="Serendevity logo" width="208" height="60">
+    </a>
+    <nav aria-label="Primary">
+      <details class="nav-menu">
+        <summary>Menu</summary>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#process">How we work</a>
+          <a href="#mantra">The mantra</a>
+          <a href="#truths">Why Serendevity</a>
+          <a class="btn btn-primary btn-sm" href="contact.html">Say hello</a>
         </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sun" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0" stop-color="#fbe9d6"/>
+            <stop offset="1" stop-color="#f3d3a8"/>
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="560" fill="#fbf7f0"/>
+        <circle cx="1120" cy="210" r="230" fill="url(#sun)" opacity="0.9"/>
+        <circle cx="1120" cy="210" r="290" fill="#f6dfbd" opacity="0.4"/>
+        <circle cx="1120" cy="210" r="360" fill="#f6dfbd" opacity="0.18"/>
+        <rect y="430" width="1440" height="130" fill="#0f3b40" opacity="0.85"/>
+        <path d="M0 430 Q 120 408 260 428 T 520 406 T 780 428 T 1060 406 T 1240 428 T 1440 412 L1440 560 L0 560 Z" fill="#19877f" opacity="0.5"/>
+        <path d="M60 150 h8 v56 M90 190 h10 v40 M118 150 h8 v88 M150 200 h9 v38 M178 160 h7 v80 M206 176 h10 v58 M240 152 h7 v95 M264 196 h8 v44 M294 174 h9 v66 M330 150 h6 v100 M352 200 h7 v46 M382 164 h8 v82" stroke="none" fill="#123a3f" opacity="0.55"/>
+        <path d="M240 152 h7 v95 M330 150 h6 v100 L333 212 l2 -62 l2 62" stroke="none" fill="#123a3f"/>
+        <path d="M1240 120 l14 -14 3 7 3 7 3 7Z" fill="#f0a83b"/>
+        <path d="M1230 300 l10 -10 3 5 3 5 3 5Z" fill="#fbf7f0"/>
+        <circle cx="1280" cy="190" r="4" fill="#f0633a"/>
+        <circle cx="1238" cy="140" r="3" fill="#14837e"/>
+      </svg>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Custom software &amp; consulting · Greater Toronto Area</span>
+        <h1 id="hero-title">Great software feels like luck.</h1>
+        <p class="lede">Serendevity is a software consulting company in the GTA. Senior-only people, honest timelines and a sense of humour — we design, build and support digital products so the only surprises are pleasant ones.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+          <a class="btn btn-ghost" href="#process">See how we work</a>
+        </div>
+        <p class="hero-note">Mississauga · Toronto · serving clients across Canada and around the world.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" role="presentation">
+          <defs>
+            <linearGradient id="art-sun" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f7d9a8"/>
+              <stop offset="1" stop-color="#f0633a"/>
+            </linearGradient>
+            <linearGradient id="art-lake" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#1c9d92"/>
+              <stop offset="1" stop-color="#123a3f"/>
+            </linearGradient>
+          </defs>
+          <circle cx="470" cy="150" r="112" fill="url(#art-sun)"/>
+          <circle cx="470" cy="150" r="128" fill="#f5b87a" opacity="0.35"/>
+          <path d="M300 470 Q 350 430 400 462 L 620 462 L 620 540 L 240 540 L 240 470 Z" fill="url(#art-lake)"/>
+          <path d="M240 470 L 280 470 l10 -4 0 4 M300 468 l8 -8 0 8 M318 470 l12 -3 0 3 M338 472 l6 -10 0 10 M352 468 l14 -4 0 4 M376 470 l9 -5 0 5 M396 472 l7 -9 0 9 M412 468 l12 -3 0 3 M436 470 l10 -4 0 4 M456 472 l6 -8 0 8 M470 468 l13 -3 0 3 M496 470 l9 -5 0 5 M514 472 l7 -7 0 7 M530 468 l12 -4 0 4 M552 470 l10 -5 0 5 M572 472 l8 -8 0 8 L 600 472 L 600 470" fill="#123a3f" opacity="0.9"/>
+          <path d="M470 468 l-4 -34 8 34 M466 470 l0 -2 8 2 M474 468 l0 -30 4 30" fill="#123a3f"/>
+          <path d="M96 300 l16 -16 5 8 5 8 5 8Z" fill="#e9a83b"/>
+          <path d="M520 300 l12 -12 4 6 4 6 4 6Z" fill="#fbf7f0"/>
+          <path class="pulse" d="M150 180 l10 -10 3 5 3 5 3 5Z" fill="#f0633a"/>
+          <g>
+            <rect x="200" y="150" width="250" height="88" rx="26" fill="#ffffff"/>
+            <path d="M210 238 l0 6 8 0 0 -6" fill="#14837e"/>
+            <text x="225" y="186" font-family="Geist, sans-serif" font-size="26" font-weight="700" fill="#26303a">good. cheap. fast.</text>
+            <text x="225" y="216" font-family="Geist, sans-serif" font-size="17" fill="#5e6b74">you get to pick any two →</text>
+          </g>
+          <circle cx="470" cy="150" r="150" fill="none" stroke="#e9a83b" stroke-width="2" stroke-dasharray="4 10" opacity="0.6"/>
+        </svg>
       </div>
     </div>
-  </div>
-</section>
-<!-- Wrapper Start -->
-<section id="intro">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7 col-sm-12">
-        <div class="block">
-          <div class="section-title">
-            <h2>About Us</h2>
-            <p>Serendevity is a custom software development company made up of highly-qualified, talented
-              and innovative IT professionals each with their own area of expertise. Their combined experience
-              covers full range of custom software development - from start ups to complex systems.
-            </p>
-          </div>
-          <p>The name <strong>Serendevity</strong> (ser·en·dev·i·ty | ser-ən-ˈdi-və-tē) is a wordplay on the more transcendant word <strong>Serendepity</strong>
-            <em>: luck that takes the form of finding valuable or pleasant things that are not looked for.
-            </em>
-          </p>
-          <p>Serendevity works like an extension of the client. It augments the company with a team of talent, experience, and organization. The client benefits from a team to
-            support its applications – a redundancy that is needed to minimize risk in running crucial applications. An individual can only excel in so many things whereas a
-            team is made up of professional with particular strong suits, whether they are front end, back-end, database, design, or mobile.</p>
-        </div>
-      </div><!-- .col-md-7 close -->
-      <div class="col-md-5 col-sm-12">
-        <div class="block">
-          <img src="img/time_cost_qual.jpg" alt="Img">
-        </div>
-      </div><!-- .col-md-5 close -->
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="feature">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-6" style="background-color: #ffffff; padding: 15px;">
-        <h3>WE BELIEVE IN GREAT IDEAS<br><em>in pursuit of great ideas<br>what matters is ...</em></h3>
-        <h4>Training</h4><p>A quality house comes from a team of skilled carpenters, not from amateurs. You get excellent results only from a skilled team. That's why we
-        constantly retrain ourselves.</p>
-        <h4>Mindset</h4><p>Changing a mindset changes thinking. Breaking your patterns of thinking leads to innovative ideas.</p>
-        <h4>Customers</h4><p>We know the best ideas come from you. We thrive when we are grounded in and sparked by consumer insights. The magic is in the melding of your business
-        knowledge, experiences and ideas.</p>
-        <h4>Process</h4><p>Generating ideas is only half the story. Selecting, refining and focusing on the best-of-the-best is equally important. That's why we
-        spend the time it takes and utilize expert resources to ensure the high quality of the final output.</p>
-        <h4>Environment</h4><p>Setting the scene is both physical and mental. By stepping out of your own offices, you literally step outside the cube you often have to think in.
-        Our teams t0 go into a project prepared—with common goals and open minds.</p>
-        <a href="#" class="btn btn-view-works">View Works</a>
+  <!-- ============ About ============ -->
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <span class="eyebrow">About us</span>
+        <h2 id="about-title">An extension of your team — not another vendor.</h2>
+        <p>Serendevity is a custom software development company made up of highly-qualified, talented and honestly a little nerdy IT professionals, each with their own area of expertise. Combined, we cover the full range of modern software work — from fresh startup ideas to complex, long-lived systems.</p>
+        <p>We work like an extension of your company: a small senior team that augments your own, with the redundancy and depth you need to keep the applications that keep <em>your</em> business running. An individual can only excel in so many things; a team has specialists in front-end, back-end, databases, cloud, design and mobile — and the habits to make it all hold together.</p>
+        <div class="pronounce">
+          <p><strong>Serendevity</strong> <code>(ser·en·dev·i·ty | sər-ən-ˈdi-və-tē)</code> — a wordplay on <em>serendipity</em>: <em>luck that takes the form of finding valuable or pleasant things that were not looked for.</em></p>
+          <p>Our promise in one cheesy-but-true sentence: <strong>the happy accident of software that just works, for years.</strong></p>
+        </div>
       </div>
+      <figure class="about-figure">
+        <picture>
+          <source type="image/webp" srcset="img/webp/toronto-skyline-night-480.webp 480w, img/webp/toronto-skyline-night-720.webp 720w" sizes="(min-width: 860px) 640px, 90vw">
+          <img src="img/toronto-skyline-night.jpg" alt="Toronto skyline at night" width="720" height="351" loading="lazy">
+        </picture>
+        <figcaption>Home base. Toronto skyline at night — photo by the user of <a href="https://commons.wikimedia.org/wiki/File:Toronto_Skyline_at_night_2024-08-23.jpg">Wikimedia Commons</a>, CC0.</figcaption>
+      </figure>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Service Start -->
-<section id="service">
-  <div class="container">
-    <div class="row">
+  <!-- ============ Services ============ -->
+  <section class="section section-alt" id="services" aria-labelledby="services-title">
+    <div class="container">
       <div class="section-title">
-        <h2>Our Services</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the
-          coast of the Semantics</p>
+        <span class="eyebrow">What we do</span>
+        <h2 id="services-title">Services that cover most of the map</h2>
+        <p class="lede">From the first sketch to the years after launch — a consulting practice, not a template agency. If you don't see your situation below, that's what the “start a conversation” button is for.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="presentation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="12" rx="2"/>
+              <path d="M6 15 h12 v4"/>
+              <path d="M8 17 h4 v2 h4"/>
+            </svg>
+          </span>
+          <h3>Web applications</h3>
+          <p>Dashboards, portals, SaaS platforms and the internal tools that quietly keep a business running. Built to be boringly reliable — boring in the best way.</p>
+        </article>
+        <article class="service-card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="presentation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="7" y="3" width="10" height="18" rx="2.5"/>
+              <path d="M9 8 h2 v10 M14 8 h1 v10"/>
+              <circle cx="16.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </span>
+          <h3>Mobile apps</h3>
+          <p>iOS, Android and progressive web apps that feel at home on any screen — and survive contact with real users, real thumbs and real-world networks.</p>
+        </article>
+        <article class="service-card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="presentation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="4" y="4" width="7" height="9" rx="1.5"/>
+              <rect x="13" y="4" width="7" height="9" rx="1.5"/>
+              <path d="M11 8 L13 8 M11 13 L13 13"/>
+              <circle cx="12" cy="10.5" r="1.4"/>
+            </svg>
+          </span>
+          <h3>APIs &amp; integrations</h3>
+          <p>We connect the systems you already have — payments, CRMs, logistics, legacy databases — so your data finally talks to itself instead of being re-typed by Sheila on Fridays.</p>
+        </article>
+        <article class="service-card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="presentation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M7 17 Q3 13 5 9 Q9 8 13 8 Q17 9 19 13 Q15 17 17 17 Z"/>
+              <circle cx="14.5" cy="12.5" r="2.4" fill="currentColor" opacity="0.75"/>
+              <circle cx="16.5" cy="9.5" r="1.8" fill="currentColor" opacity="0.55"/>
+            </svg>
+          </span>
+          <h3>Cloud, DevOps &amp; infrastructure</h3>
+          <p>Deployments without prayers, monitoring that finds problems before users do, and cloud bills you can actually read out loud.</p>
+        </article>
+        <article class="service-card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="presentation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 16 l8 -8 2 4 2 4 2 4Z M12 16 l-8 -8 2 4 2 4 2 4Z"/>
+              <circle cx="12" cy="3.2" r="2" fill="currentColor"/>
+            </svg>
+          </span>
+          <h3>AI &amp; data</h3>
+          <p>Practical machine learning and LLM integrations — assistants, automation, retrieval over your own documents — aimed at things that pay for themselves.</p>
+        </article>
+        <article class="service-card">
+          <span class="icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="presentation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M6 14 Q10 18 14 18 Q18 14 18 9 Q15 6 12 10 Q9 14 6 14 Z"/>
+              <path d="M9.5 13.5 h4" opacity="0.75" stroke="currentColor" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3>Team augmentation</h3>
+          <p>A senior engineer plugged into your team when you need one — architecture reviews, rescue missions, or a steady pair of hands for the long haul.</p>
+        </article>
       </div>
     </div>
-    <div class="row ">
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="icon ion-coffee"></i>
-          <h4>Branding</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-compass"></i>
-          <h4>Web Design</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-image"></i>
-          <h4>App Design</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-bug"></i>
-          <h4>Start Up</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-headphone"></i>
-          <h4>Logo Design</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-leaf"></i>
-          <h4>Development</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-planet"></i>
-          <h4>Brand Identity</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3">
-        <div class="service-item">
-          <i class="ion-earth"></i>
-          <h4>Brand Identity</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Call to action Start -->
-<section id="call-to-action">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <h2>We design delightful digital experiences.</h2>
-          <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team
-            who just love to design.</p>
-          <a class="btn btn-default btn-call-to-action" href="#">Tell Us Your Story</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Content Start -->
-<section id="testimonial">
-  <div class="container">
-    <div class="row">
-      <div class="section-title text-center">
-        <h2>Fun Facts About Us</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the
-          coast of the Semantics</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="block">
-          <ul class="counter-box clearfix">
-            <li>
-              <div class="block">
-                <i class="ion-ios-glasses-outline"></i>
-                <h4 class="counter">5,010,000</h4>
-                <span>Lines of Code</span>
-              </div>
-            </li>
-            <li>
-              <div class="block">
-                <i class="ion-ios-sunny-outline"></i>
-                <h4 class="counter">722</h4>
-                <span>Delightful Mornings</span>
-              </div>
-            </li>
-            <li>
-              <div class="block">
-                <i class="ionicons ion-android-happy"></i>
-                <h4 class="counter">101</h4>
-                <span>Satisfied Customers</span>
-              </div>
-            </li>
-            <li>
-              <div class="block">
-                <i class="ionicons ion-coffee"></i>
-                <h4 class="counter">5</h4>
-                <span>Cups Of Coffee</span>
-              </div>
-            </li>
+  </section>
 
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="testimonial-carousel">
-          <div id="testimonial-slider" class="owl-carousel">
-            <div>
-              <img src="img/cotation.png" alt="IMG">
-              <p>"Serendevity created an e-commerce site with the tools to make our business a success, with innovative ideas we feel that our site has unique elements that make
-                us stand out from the crowd."</p>
-              <div class="user">
-                <img src="img/item-img1.jpg" alt="Pepole">
-                <p><span>Rose Ray</span> CEO, XYZ Company</p>
-              </div>
-            </div>
-            <div>
-              <img src="img/cotation.png" alt="IMG">
-              <p>"We are we very excited with the new project. The solution was creative and timely."</p>
-              <div class="user">
-                <img src="img/item-img1.jpg" alt="Pepole">
-                <p><span>Ryan Redwood</span>Director IT, ABC Company</p>
-              </div>
-            </div>
+  <!-- ============ Mantra ============ -->
+  <section class="section section-dark" id="mantra" aria-labelledby="mantra-title">
+    <div class="container mantra-grid">
+      <figure class="mantra-figure">
+        <picture>
+          <source type="image/webp" srcset="img/webp/mantra-524.webp 524w" sizes="(min-width: 860px) 520px, 90vw">
+          <img src="img/time_cost_qual.jpg" alt="The classic project triangle: good, cheap, fast — pick any two" width="524" height="350" loading="lazy">
+        </picture>
+        <figcaption>The oldest joke in engineering is still the most honest.</figcaption>
+      </figure>
+      <div class="mantra-copy">
+        <span class="eyebrow">Our philosophy</span>
+        <h2 id="mantra-title">Good. Cheap. Fast.</h2>
+        <p>Every project is a triangle. You get to pick two sides, and we'll be honest about the third — because “we can do all three” usually means “we'll be late and it'll cost more.” Honesty up front is what makes the rest of the project feel lucky.</p>
+        <fieldset class="pick">
+          <legend>Go ahead, pick any two — it's culturally required:</legend>
+          <div class="pick-grid">
+            <input type="radio" id="pick-good" name="pick" value="good">
+            <label for="pick-good"><span class="dot" aria-hidden="true"></span>Good</label>
+            <input type="radio" id="pick-cheap" name="pick" value="cheap">
+            <label for="pick-cheap"><span class="dot" aria-hidden="true"></span>Cheap</label>
+            <input type="radio" id="pick-fast" name="pick" value="fast">
+            <label for="pick-fast"><span class="dot" aria-hidden="true"></span>Fast</label>
           </div>
-        </div>
+        </fieldset>
+        <p class="pick-note">Pick two and we'll plan accordingly. We'll tell you which corner you chose to skip, what it means in practice, and how to change your mind later without any drama.</p>
       </div>
     </div>
+  </section>
+
+  <!-- ============ How we work ============ -->
+  <section class="section" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Our process</span>
+        <h2 id="process-title">How we work</h2>
+        <p class="lede">Five steps, no jargon, and you'll always know where things stand. If a step feels like a meeting that could have been an email, tell us — that's literally feedback we're built for.</p>
+      </div>
+      <div class="process-list">
+        <article class="process-step">
+          <span class="num" aria-hidden="true">1</span>
+          <div>
+            <h3>Listen</h3>
+            <p>We start with questions, not answers — who uses this, what breaks today, what would make your life quietly better. We take the “why” as seriously as the “what”.</p>
+          </div>
+        </article>
+        <article class="process-step">
+          <span class="num" aria-hidden="true">2</span>
+          <div>
+            <h3>Map</h3>
+            <p>A short, readable plan: scope, phases, risks and a timeline in plain language — the kind you can forward to a colleague without translating.</p>
+          </div>
+        </article>
+        <article class="process-step">
+          <span class="num" aria-hidden="true">3</span>
+          <div>
+            <h3>Build</h3>
+            <p>Small iterations, working software every couple of weeks, demos you can click — not slideware. Stories stay small; surprises stay small.</p>
+          </div>
+        </article>
+        <article class="process-step">
+          <span class="num" aria-hidden="true">4</span>
+          <div>
+            <h3>Ship</h3>
+            <p>Deployed, monitored, documented and handed over with the keys. Launch day is a Tuesday with a checklist, not a leap of faith.</p>
+          </div>
+        </article>
+        <article class="process-step">
+          <span class="num" aria-hidden="true">5</span>
+          <div>
+            <h3>Support</h3>
+            <p>Software is a garden, not a photo. We stay on speed dial for fixes, improvements and the occasional “is this normal?” — an actual human answers.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ True things ============ -->
+  <section class="section section-alt" id="truths" aria-labelledby="truths-title">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Straight talk</span>
+        <h2 id="truths-title">A few true things about us</h2>
+        <p class="lede">No fake stats, no inflated counts. Just the stuff you'd want to know before trusting us with your software.</p>
+      </div>
+      <div class="truths-grid">
+        <div class="truth">
+          <span class="bullet" aria-hidden="true">✓</span>
+          <p><strong>Small team, on purpose.</strong> Senior people only — no bench-warmers, no “let me check with the team”, no interns learning on your deadline.</p>
+        </div>
+        <div class="truth">
+          <span class="bullet" aria-hidden="true">✓</span>
+          <p><strong>Remote-first in the GTA.</strong> Our coffee is local to Mississauga; our clients are anywhere. We show up in person when it matters.</p>
+        </div>
+        <div class="truth">
+          <span class="bullet" aria-hidden="true">✓</span>
+          <p><strong>We say no a lot.</strong> A good “no” saves you money and heartache. If you don't need something, we'll be the first to say so.</p>
+        </div>
+        <div class="truth">
+          <span class="bullet" aria-hidden="true">✓</span>
+          <p><strong>We can't spell our own name</strong> on the first try. It's a wordplay on <em>serendipity</em> — luck you weren't looking for. We've embraced the typo-symmetry.</p>
+        </div>
+      </div>
+      <div class="cta-banner">
+        <div>
+          <h3>Want the happy-accident kind of software?</h3>
+          <p>Tell us what you're building (or what's on fire). We'll reply within one business day — usually faster.</p>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Serendevity — home">
+          <img src="img/logo.png" alt="Serendevity logo" width="208" height="60">
+        </a>
+        <p>Software consulting in the Greater Toronto Area. Good. Cheap. Fast. — you pick two.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">How we work</a></li>
+          <li><a href="#mantra">The mantra</a></li>
+          <li><a href="#truths">Why Serendevity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Say hi</h3>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mailto:contact@serendevity.com">contact@serendevity.com</a></li>
+        </ul>
+        <p>Mississauga, ON · Greater Toronto Area · Canada</p>
+      </div>
+      <div class="footer-col">
+        <h3>Fine print</h3>
+        <ul>
+          <li><a href="humans.txt">For humans</a></li>
+          <li><a href="llms.txt">For language models</a></li>
+          <li><a href="sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> Serendevity. All rights reserved.</p>
+      <p>Made with ☕ in Mississauga.</p>
+    </div>
   </div>
-</section>
+</footer>
+
+<script src="js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Old site structure → new (no blog, no separate work page)
+/blog/*        /            301
+/blog          /            301
+/work/*        /            301
+/work          /            301
+/services.html /#services   302
+/about.html    /#about      302
+
+# Extension niceties
+index.html     /            302
+contact.html   /contact     301
+
+# security.txt canonical location
+/security.txt  /.well-known/security.txt 302

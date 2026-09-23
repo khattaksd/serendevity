@@ -1,0 +1,26 @@
+name = "serendevity-contact"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+# Native Cloudflare Email Service (public beta) — sends email from the Worker
+# with no third-party service. The sender domain must be verified in your
+# Cloudflare dashboard (Email Service → Domains → verify serendevity.com).
+[[send_email]]
+name = "EMAIL"
+
+# Route the Worker to /api/* on the apex domain only; Cloudflare Pages serves
+# everything else. (Uncomment when the custom domain is attached to Pages.)
+# routes = [
+#   { pattern = "serendevity.com/api/*", custom_domain = true }
+# ]
+
+[vars]
+TO_EMAIL = "contact@serendevity.com"
+FROM_EMAIL = "hello@serendevity.com"
+EXPECTED_ACTION = "serendevity_contact"
+# Comma-separated. "*." entries match any subdomain (used for *.pages.dev previews).
+ALLOWED_ORIGINS = "https://serendevity.com,https://www.serendevity.com,https://*.serendevity.pages.dev"
+
+# Secrets (never in this file) — set with:
+#   wrangler secret put TURNSTILE_SECRET
+# Value: the Turnstile WIDGET_SECRET from your widget (NOT the sitekey).

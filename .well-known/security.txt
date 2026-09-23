@@ -1,0 +1,5 @@
+Contact: mailto:contact@serendevity.com
+Preferred-Languages: en
+Canonical: https://serendevity.com/.well-known/security.txt
+Policy: https://serendevity.com/
+Expires: 2027-01-01T00:00:00.000Z
