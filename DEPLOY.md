@@ -1,48 +1,95 @@
 # Serendevity — deployment runbook (Cloudflare Pages)
 
 Everything the site needs to go from this repo to https://serendevity.com.
-Do the steps in order. Commands tagged `[you]` need your Cloudflare/GitHub
+Do the phases in order. Commands tagged `[you]` need your Cloudflare/GitHub
 sessions; the rest are notes/verification.
 
-## 0 · Prerequisites (one-time)
+**Branch note:** this is an old repo — the default branch is **`master`**
+(not `main`). Deploy Pages from `master`. The current work lives on
+`rebuild`; merge it into `master` first (see Phase 0) so the deployed branch
+stays the one people expect.
 
-- This repo pushed to GitHub (current working branch: `rebuild`; deploy from
-  `main` or `rebuild` — your call, just be consistent).
-- Domain `serendevity.com` DNS is on Cloudflare (already done).
-- Netlify still serving the old site (to be removed in step 4 — until then
-  the domain points at Netlify, so do step 4 in one sitting).
+## Phase 0 · Decouple Netlify (do FIRST — before any Cloudflare move)
 
-## 1 · Create the Cloudflare Pages project `[you]`
+Goal: Netlify can no longer auto-deploy or auto-pull from GitHub, and has no
+claim on the domain. **Recommended order keeps the old site up with zero
+downtime** — unlink first, delete only after Cloudflare is live.
+
+1. `[you]` **Stop Git deploys — Netlify side:**
+   - Netlify → your site → **Site configuration → Build & deploy →
+     Continuous deployment → GitHub** → *Disconnect from GitHub*.
+   - Also delete any **Deploy hooks** and **Build triggers** on the same page.
+2. `[you]` **Stop Git integration — GitHub side:**
+   - GitHub → repo → **Settings → Integrations → Applications** → remove **Netlify**.
+   - (Optional belt-and-braces) GitHub → repo → **Settings → Webhooks** →
+     delete any `netlify` webhook.
+3. `[you]` **Pause the Netlify site** (keeps the current build up as a static
+   snapshot): Netlify → **Site configuration → Build & deploy** → *Pause deploys*.
+   - The site keeps serving; it just can't change. DNS still points at it
+     until Phase 3 flips to Cloudflare — **no downtime**.
+4. **Verify from a terminal (no auth needed):**
+   ```sh
+   git ls-remote https://github.com/khattaksd/serendevity.git   # repo is just a repo again
+   curl -sI https://serendevity.com | grep -i server            # expect: server: Netlify (old site, but paused)
+   ```
+   Push a trivial commit later and confirm nothing deploys to Netlify (no
+   deploy notifications, `netlify` webhook gone).
+5. `[you]` **Only after Phase 4 passes** (Pages serving the apex): Netlify →
+   **Delete site** (Settings → Danger zone). Deletion stops the paused site.
+
+> Downtime-only alternative (if you'd rather delete Netlify before touching
+> Cloudflare): do steps 3+5 together now and accept the site being down until
+> Phase 3. Not recommended, but that's the ordering you explicitly asked for
+> is one you can take — just schedule Phases 1–3 in the same hour.
+
+## Phase 1 · Merge & push
+
+1. `[you or me]` Merge `rebuild` into `master`:
+   - GitHub: open PR `rebuild → master` and merge; or locally:
+     `git checkout master && git merge rebuild && git push`.
+2. `git ls-remote origin master` — confirm the tip matches local.
+
+## Phase 2 · Create the Cloudflare Pages project `[you]`
 
 1. https://dash.cloudflare.com → **Workers & Pages → Create → Pages → Import repository**
 2. Connect the GitHub repo. Build settings:
+   - **Production branch:** `master`
    - **Build command:** *(leave empty — there is no build)*
    - **Build output directory:** `/`
-   - Deploy.
-3. Project URL will be `https://<project>.pages.dev` — that's stage one.
-   Open it and sanity-check Home + Contact + 404, then:
+   - Deploy. Project URL: `https://<project>.pages.dev` — sanity-check
+     Home + Contact + 404 there before touching the domain.
 
-## 2 · Custom domain
+## Phase 3 · Custom domain (this is the DNS flip)
 
 1. Cloudflare Pages → project → **Custom domains → Set up a custom domain** →
-   `serendevity.com`
-2. Cloudflare auto-creates the DNS records (CNAME flattening for the apex).
-   If the dashboard reports conflicting records (see step 4), fix DNS there.
-3. **Redirect www → apex** (301, preserve path):
+   `serendevity.com`. Cloudflare auto-creates the records.
+   If it reports conflicting records, remove the Netlify records first
+   (step 4 below — should already be gone after Phase 0).
+2. **Redirect www → apex** (301, preserve path):
    Cloudflare dashboard → **Rules → Redirect Rules → Create**:
    - When: *Hostname equals* `www.serendevity.com`
    - Then: *Dynamic redirect* → `https://serendevity.com${path}`
    - Status: 301
-4. Verify: `curl -I https://serendevity.com` → expect `HTTP/2 200`,
-   and `curl -I https://www.serendevity.com` → `301` to the apex.
+3. DNS records to confirm in Cloudflare → **DNS → Records**:
+   - `serendevity.com` → CNAME flattened to the Pages project (auto)
+   - `www.serendevity.com` → Points where the redirect rule can catch it
+     (set to the same Pages project or a proxy'd record)
+   - No A records with Netlify IPs (`75.2.60.x`, `185.199.108.x`,
+     `199.36.162.x`) and no CNAME to `*.netlify.app`.
+4. Verify:
+   ```sh
+   curl -sI https://serendevity.com | grep -i server     # server: cloudflare
+   curl -sI https://www.serendevity.com | head -5        # 301 → serendevity.com
+   curl -sI https://serendevity.com/img/logo.png | grep -i cache-control  # immutable
+   curl -sI https://serendevity.com | grep -i content-security-policy    # CSP applied
+   ```
 
-## 3 · Contact form: Worker + Turnstile + Email Service `[you]`
+## Phase 4 · Contact form: Worker + Turnstile + Email Service `[you]`
 
 Follow **`workers/contact-form/README.md`**:
 
 1. Create the **Turnstile widget** (name `serendevity-contact`, hosts
-   `serendevity.com` + `www.serendevity.com`). Copy the **Site Key** and
-   **Secret**.
+   `serendevity.com` + `www.serendevity.com`). Copy the **Site Key** and **Secret**.
 2. Put the real Site Key into `contact.html` (the `.cf-turnstile` div,
    `data-sitekey="…"` — currently Turnstile's public *test* key).
 3. Enable **Email → Send email** (public beta), add `serendevity.com`,
@@ -55,28 +102,19 @@ Follow **`workers/contact-form/README.md`**:
 7. End-to-end test: open `/contact`, click the form (widget lazy-loads),
    tick the checkbox, send → email arrives at `TO_EMAIL`.
 
-## 4 · Netlify teardown (do the same hour as step 2)
+## Phase 5 · Delete Netlify (final cleanup)
 
-1. Netlify dashboard → site → **Site configuration → Build & deploy** →
-   *Pause deploys* (then delete the site once confirmed).
-2. GitHub → repo → **Settings → Integrations** → remove Netlify (stops
-   auto-deploys).
-3. Cloudflare dashboard → **DNS → Records**: remove any record pointing at
-   Netlify:
-   - A records with Netlify IPs (`75.2.60.x`, `185.199.108.x`, `199.36.162.x`…)
-   - a CNAME to `*.netlify.app`
-   The Pages custom-domain records (step 2) must be the only ones for
-   `serendevity.com` / `www.serendevity.com`.
-4. Verify `curl -I https://serendevity.com` → `server: cloudflare` and no
-   `x-nf-request-id`-style headers.
+Only once Phase 3 is verified green: Netlify → **Site configuration →
+Danger zone → Delete site**. This is the last Netlify step; the paused
+snapshot disappears.
 
-## 5 · Finish line
+## Phase 6 · Finish line
 
 - Hard-refresh the site: hero, mantra, process, contact form, 404.
-- Run Lighthouse (desktop + mobile) against the live URL:
+- Run Lighthouse against the live URL:
   `npx lighthouse https://serendevity.com/ --view=render`
-  — targets: 100s. The local suite already scored 100/100/100/100 on
-  Home/Contact and 100s except perf on 404 (which is a real 404 by design).
+  — targets: 100s (locally verified 100/100/100/100 on Home & Contact;
+  404 is a real 404 by design).
 - Optional, privacy-friendly analytics:
   Cloudflare dashboard → **Analytics → Web Analytics** → add measurement
   site. Its JS beacon is already allowed by the CSP
@@ -84,7 +122,6 @@ Follow **`workers/contact-form/README.md`**:
 
 ## Rollback
 
-- Pages has instant preview per commit and instant production rollbacks in
-  the dashboard (**Deployments → … → Rollback**).
-- The old Netlify site remains available until you delete it — DNS flip back
-  is just re-adding Netlify's records if anything goes sideways.
+- Pages has instant production rollbacks (**Deployments → … → Rollback**).
+- Until Phase 5, you still have the Netlify paused snapshot; re-pointing DNS
+  at Netlify (re-adding its records) restores the old site.

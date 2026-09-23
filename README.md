@@ -47,32 +47,23 @@ python3 scripts/serve-live.py     # local server with gzip + cache (mimics Cloud
 > compressed serving (verified 4×100 with the pretty file).
 ```
 
-## Deploy checklist (Cloudflare Pages)
+## Deployment
 
-1. This repo is connected to Cloudflare Pages.
-   Build command: **none** · Output directory: **`/`** (there is no build).
-2. Attach the custom domain **`serendevity.com`** in Pages → Custom domains.
-   Cloudflare auto-creates the DNS records (CNAME flattening for the apex).
-   If anything already points at Netlify (an A record with Netlify IPs, or a
-   CNAME to `*.netlify.app`), delete it first — don't point two hosts at once.
-3. Add a redirect rule so `www.serendevity.com` → `https://serendevity.com`
-   (301, "www to apex", preserve path). Do it in Rules → Redirect Rules, not
-   in `_redirects` (that file only covers same-host paths).
-4. Deploy the Worker and configure Turnstile + Email Service —
-   see `workers/contact-form/README.md`.
-5. Optional, privacy-friendly analytics: Cloudflare Web Analytics
-   (dashboard → Analytics → Web Analytics → measurement site). It is
-   cookieless and JS-beacon-based; the CSP already allows its domain.
+Follow **`DEPLOY.md`** — the full, ordered runbook. Summary:
 
-### Disconnecting Netlify (do this so the old site stops auto-deploying)
+1. **Phase 0 — decouple Netlify first** (disconnect GitHub auto-deploy on
+   Netlify + GitHub, pause the site — it keeps serving as a static snapshot,
+   so the domain stays up until you flip it).
+2. **Phase 1 — branch** — this repo's default is `master` (not `main`);
+   merge `rebuild` → `master` and deploy Pages from `master`.
+3. **Phases 2–3 — Cloudflare Pages** — import repo (no build command, output
+   dir `/`), attach `serendevity.com`, add a 301 `www → apex` redirect rule.
+4. **Phase 4 — form** — Turnstile widget + real sitekey in `contact.html`,
+   Email Service verification, then `wrangler deploy --route "serendevity.com/api/*"`
+   (details in `workers/contact-form/README.md`).
+5. **Phase 5 — delete Netlify** only after Cloudflare is verified live.
 
-- Netlify dashboard → your site → **Site configuration → Build & deploy** →
-  pause or delete the site, and remove the GitHub integration.
-- Cloudflare dashboard → DNS → remove any Netlify records (A records pointing
-  to Netlify IPs, or a CNAME to `*.netlify.app`).
-- GitHub → repo → Settings → Integrations → Netlify: remove.
-- After migration: `curl -I https://serendevity.com` should show
-  `server: cloudflare` and the old Netlify headers should be gone.
+Verification commands and rollback notes are all in `DEPLOY.md`.
 
 ## Validation targets
 
