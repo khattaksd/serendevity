@@ -13,9 +13,7 @@ handles the contact form with Turnstile + native Email Service.
 ├── index.html            Home (about, services, mantra, process, truths)
 ├── contact.html          Contact form → /api/contact Worker + map
 ├── 404.html              Friendly not-found
-├── css/styles.css        Design-system source (self-hosted Geist type)
-├── css/styles.min.css    Minified, generated — what the pages actually load
-│                         (regenerate after edits: python3 scripts/minify-css.py)
+├── css/styles.css        The whole design system (self-hosted Geist type)
 ├── js/site.js            Year, form submit, lazy Turnstile
 ├── fonts/geist/          Geist woff2 subsets (OFL) — 100% self-hosted
 ├── img/                  logo, mantra, CC skyline photo (+ webp variants)
@@ -27,7 +25,7 @@ handles the contact form with Turnstile + native Email Service.
 ├── favicon.svg / apple-touch-icon.png / icon-192.png
 ├── _headers              Security headers, CSP, cache policy
 ├── _redirects            Old Netlify-era URLs → new home
-├── scripts/              serve-live.py (local), minify-css.py
+├── scripts/              serve-live.py (local dev server)
 └── workers/contact-form/ The form Worker (see its README)
 ```
 
@@ -43,7 +41,10 @@ Install the CLI validators used during development:
 npm i -g html-validate            # npx html-validate index.html contact.html 404.html
 npm i -g lighthouse               # lighthouse http://localhost:8123/index.html --view=render
 python3 scripts/serve-live.py     # local server with gzip + cache (mimics Cloudflare)
-python3 scripts/minify-css.py     # after editing css/styles.css
+
+> CSS is served as-is (no minifier): Cloudflare Pages' Brotli compression already
+> handles transfer size, and Lighthouse's unminified-css check passes under
+> compressed serving (verified 4×100 with the pretty file).
 ```
 
 ## Deploy checklist (Cloudflare Pages)
