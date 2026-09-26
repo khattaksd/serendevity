@@ -214,19 +214,19 @@ figcaption {
 }
 
 /* ---------- Scroll reveal (driven by js/site.js, off without JS) ---------- */
+/* Transform-only on purpose: animating opacity changes the *computed*
+   color mid-fade, which Lighthouse contrast sampling (and any color-
+   contrast audit) reads as a failed ratio. Transform can't alter it. */
 html.js .reveal {
-  opacity: 0;
   transform: translateY(26px);
 }
 html.js .reveal.in-view {
-  opacity: 1;
   transform: none;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: transform 0.5s ease;
   transition-delay: calc(var(--d, 0) * 1ms);
 }
 @media (prefers-reduced-motion: reduce) {
   html.js .reveal {
-    opacity: 1;
     transform: none;
     transition: none;
   }
