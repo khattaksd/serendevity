@@ -49,20 +49,20 @@ python3 scripts/serve-live.py     # local server with gzip + cache (mimics Cloud
 
 ## Deployment
 
-Follow **`DEPLOY.md`** — the full, ordered runbook. Summary:
+The site is a **Workers static-assets project** (Cloudflare Pages is now part
+of Workers) deployed from the CLI. Full runbook: **`DEPLOY.md`**. Summary:
 
-1. **Phase 0 — decouple Netlify first** (disconnect GitHub auto-deploy on
-   Netlify + GitHub, pause the site — it keeps serving as a static snapshot,
-   so the domain stays up until you flip it).
-2. **Phase 1 — branch** — the repo's single branch is `main`; deploy Pages from `main`.
-3. **Phases 2–3 — Cloudflare Pages** — import repo (no build command, output
-   dir `/`), attach `serendevity.com`, add a 301 `www → apex` redirect rule.
-4. **Phase 4 — form** — Turnstile widget + real sitekey in `contact.html`,
-   Email Service verification, then `wrangler deploy --route "serendevity.com/api/*"`
-   (details in `workers/contact-form/README.md`).
-5. **Phase 5 — delete Netlify** only after Cloudflare is verified live.
+```sh
+npx wrangler pages project create serendevity --production-branch main   # once
+npx wrangler deploy          # from repo root — every publish
+```
 
-Verification commands and rollback notes are all in `DEPLOY.md`.
+- `wrangler.jsonc` + `.assetsignore` live at the repo root (see DEPLOY.md
+  for the post-deploy sanity checks).
+- Custom domain + www→apex redirect: Workers dashboard → serendevity →
+  Domains & Routes, then a Redirect Rule (steps in DEPLOY.md).
+- Contact form: separate `/api/*` Worker in `workers/contact-form/` (its
+  README has the buttons; needs Turnstile widget + Email Service setup).
 
 ## Validation targets
 
