@@ -12,6 +12,7 @@
 # Extension niceties
 index.html     /    302
 contact.html   /contact    301
+/contact       /contact.html    200
 
 # security.txt canonical location
 /security.txt  /.well-known/security.txt 302
