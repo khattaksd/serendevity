@@ -80,10 +80,19 @@
         errorBox.style.display = "block";
       }
       if (successBox) successBox.style.display = "none";
+      resetTurnstile();
     }
     function showSuccess() {
       if (errorBox) errorBox.style.display = "none";
       if (successBox) successBox.style.display = "block";
+      resetTurnstile();
+    }
+    /* Turnstile tokens are single-use: after every attempt, reset the widget
+       so a fresh token exists for the next submit. */
+    function resetTurnstile() {
+      try {
+        if (window.turnstile && window.turnstile.reset) window.turnstile.reset();
+      } catch (e) { /* widget not loaded yet — nothing to reset */ }
     }
 
     contactForm.addEventListener("submit", function (ev) {
