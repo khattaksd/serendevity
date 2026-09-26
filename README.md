@@ -16,7 +16,7 @@ handles the contact form with Turnstile + native Email Service.
 ├── css/styles.css        The whole design system (self-hosted Geist type)
 ├── js/site.js            Year, form submit, lazy Turnstile
 ├── fonts/geist/          Geist woff2 subsets (OFL) — 100% self-hosted
-├── img/                  logo, mantra, CC skyline photo (+ webp variants)
+├── img/                  logo, mantra, CC photos (hero + Toronto) + webp variants
 ├── img/CREDITS.md        Image licenses & attributions (Creative Commons)
 ├── robots.txt            All crawlers (incl. AI) explicitly allowed
 ├── llms.txt / llms-full.txt   LLM-discoverable summaries

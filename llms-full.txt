@@ -49,7 +49,7 @@ Good. Cheap. Fast. — you get to pick any two, and we will be honest about the 
 - The site is a pure static HTML/CSS/JS site served by Cloudflare Pages. No blog, no CMS.
 - A contact form on /contact posts to a Cloudflare Worker which validates a Turnstile token and delivers email natively via Cloudflare Email Service. No third-party form services.
 - Analytics: none by default (privacy-friendly Cloudflare Web Analytics optional).
-- Photography on the site is from Wikimedia Commons (CC BY 2.0); full attributions in img/CREDITS.md. Icons: Lucide (ISC). Font: Geist (OFL).
+- Photography on the site is from Wikimedia Commons (CC BY 2.0 / CC BY-SA 4.0); full attributions in img/CREDITS.md. Icons: Lucide (ISC). Font: Geist (OFL).
 
 ## Extracted key entities
 

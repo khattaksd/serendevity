@@ -26,6 +26,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" href="fonts/geist/latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="img/webp/hero-sky-1600.webp" imagesrcset="img/webp/hero-sky-900.webp 900w, img/webp/hero-sky-1600.webp 1600w" imagesizes="100vw" type="image/webp">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,13 +82,16 @@
 
 <main id="main">
 
-  <!-- ============ Hero: clear-day sky ============ -->
+  <!-- ============ Hero ============ -->
   <section class="sky-hero" aria-labelledby="hero-title">
-    <div class="sun" aria-hidden="true"></div>
+    <picture class="hero-photo" aria-hidden="true">
+      <source type="image/webp" srcset="img/webp/hero-sky-900.webp 900w, img/webp/hero-sky-1600.webp 1600w" sizes="100vw">
+      <img src="img/hero-sky.jpg" alt="" width="1600" height="902">
+    </picture>
     <div class="container hero-inner">
       <div class="hero-copy">
         <span class="kicker">Custom software &amp; consulting</span>
-        <h1 id="hero-title">Great software, engineered <span class="hl">on purpose.</span></h1>
+        <h1 id="hero-title">Good. Cheap. Fast. <span class="hl">Pick any two.</span></h1>
         <p class="lede">Serendevity is a software consulting company built on senior-only people, honest timelines and a sense of humour. We design, build and support digital products — carefully, on purpose — so the only surprises are pleasant ones.</p>
         <div class="btn-row">
           <a class="btn btn-sky" href="contact.html">Start a conversation</a>
@@ -190,7 +194,7 @@
       </figure>
       <div class="mantra-copy reveal" style="--d:120">
         <span class="kicker">Our philosophy</span>
-        <h2 id="mantra-title">Good. Cheap. Fast.</h2>
+        <h2 id="mantra-title">Every project is a triangle.</h2>
         <p>Every project is a triangle. You get to pick two sides, and we'll be honest about the third — because “we can do all three” usually means “we'll be late and it'll cost more.” Honesty up front is what makes the rest of the project feel easy.</p>
         <p class="pick-note">Pick two and we'll plan accordingly. We'll tell you which corner you chose to skip, what it means in practice, and how to change your mind later without any drama.</p>
       </div>
@@ -319,6 +323,7 @@
         <ul>
           <li><a href="humans.txt">For humans</a></li>
           <li><a href="llms.txt">For language models</a></li>
+          <li><a href="img/CREDITS.md">Photo credits</a></li>
           <li><a href="sitemap.xml">Sitemap</a></li>
         </ul>
       </div>

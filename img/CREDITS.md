@@ -9,9 +9,10 @@ contact@serendevity.com.
 | File | Subject | Author | License | Source |
 |---|---|---|---|---|
 | `img/toronto-skyline-day.jpg`, `img/webp/toronto-skyline-day-480.webp`, `img/webp/toronto-skyline-day-720.webp` | Toronto skyline on a clear fall day | Cameron Norman, Toronto, ON | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Beautiful_fall_day_in_here_in_Toronto_-toronto_-skyline_(30157289216).jpg |
+| `img/hero-sky.jpg`, `img/webp/hero-sky-900.webp`, `img/webp/hero-sky-1600.webp` | Above the clouds (airplane window, BA11) — hero background | [Kenrick95](https://commons.wikimedia.org/wiki/User:Kenrick95) | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Above_clouds,_BA11,_21_July_2015.jpg |
 
-The WebP/JPEG files are resized derivatives of the Wikimedia file above.
-CC BY 2.0 license: https://creativecommons.org/licenses/by/2.0/
+The WebP/JPEG files are resized derivatives of the Wikimedia files above.
+Licenses: CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/) and CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Icons
 

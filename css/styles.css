@@ -397,27 +397,21 @@ html.js .reveal.in-view {
   );
   padding: clamp(4.2rem, 10vw, 7.5rem) 0 clamp(3.4rem, 8vw, 5.6rem);
 }
-.sun {
-  position: absolute;
-  top: -6%;
-  right: -4%;
-  width: 58%;
-  aspect-ratio: 1;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 238, 199, 0.95) 0%,
-    rgba(255, 238, 199, 0.4) 26%,
-    rgba(255, 238, 199, 0) 62%
-  );
-  animation: sun-breathe 11s ease-in-out infinite;
-}
 .hero-inner {
   position: relative;
   z-index: 1;
 }
 .hero-copy {
   animation: hero-rise 0.85s ease both;
+}
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  pointer-events: none;
 }
 @keyframes hero-rise {
   from {
@@ -498,7 +492,6 @@ html.js .reveal.in-view {
   animation-delay: 2.2s;
 }
 @media (prefers-reduced-motion: reduce) {
-  .sun,
   .glass-card {
     animation: none;
   }
@@ -513,17 +506,6 @@ html.js .reveal.in-view {
   }
   50% {
     transform: translateY(-7px);
-  }
-}
-@keyframes sun-breathe {
-  0%,
-  100% {
-    opacity: 0.9;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.06);
   }
 }
 
