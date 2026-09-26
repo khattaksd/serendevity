@@ -1,0 +1,11 @@
+# Assets ignored by `wrangler deploy` (see https://developers.cloudflare.com/workers/static-assets/binding/#ignoring-assets)
+# Keep the publicly-served tree strictly to site files.
+
+README.md
+DEPLOY.md
+LICENSE.md
+wrangler.jsonc
+.gitignore
+.assetsignore
+scripts/**
+workers/**

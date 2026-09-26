@@ -18,3 +18,7 @@ dist/
 *.pem
 .env
 .env.*
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
