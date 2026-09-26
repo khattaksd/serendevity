@@ -26,7 +26,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" href="fonts/geist/latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="img/webp/hero-sky-1600.webp" imagesrcset="img/webp/hero-sky-900.webp 900w, img/webp/hero-sky-1600.webp 1600w" imagesizes="100vw" type="image/webp">
+  <link rel="preload" as="image" href="img/webp/hero-sky-dark-1200.webp">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,10 +84,7 @@
 
   <!-- ============ Hero ============ -->
   <section class="sky-hero" aria-labelledby="hero-title">
-    <picture class="hero-photo" aria-hidden="true">
-      <source type="image/webp" srcset="img/webp/hero-sky-900.webp 900w, img/webp/hero-sky-1600.webp 1600w" sizes="100vw">
-      <img src="img/hero-sky.jpg" alt="" width="1600" height="902">
-    </picture>
+    <div class="hero-photo" role="presentation" aria-hidden="true"></div>
     <div class="container hero-inner">
       <div class="hero-copy">
         <span class="kicker">Custom software &amp; consulting</span>
