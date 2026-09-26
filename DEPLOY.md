@@ -55,6 +55,20 @@ downtime** — unlink first, delete only after Cloudflare is live.
    - Deploy. Project URL: `https://<project>.pages.dev` — sanity-check
      Home + Contact + 404 there before touching the domain.
 
+   ⚠️ **Common pitfall — the “Deploy with wrangler” box in the dashboard.**
+   Leave the build command **empty**. If you set it to `npx wrangler deploy`,
+   wrangler runs *inside* the Pages build and deploys the repo as a
+   **Static-Assets Worker** instead (the log shows a `*.workers.dev` URL and
+   `.git/` files in the asset list). If that happened:
+   1. Delete the stray worker: Workers & Pages → the `*.workers.dev`
+      deployment → **Manage → Delete** (it currently serves the whole repo).
+   2. Pages project → **Settings → Builds & deployments → Build command** →
+      clear it → Save.
+   3. **Redeploy** → the correct deploy shows only site files (no `.git`
+      entries), and Pages' `_headers`/`_redirects` features apply.
+   `wrangler` is only ever used from `workers/contact-form/` to deploy the
+   `/api/*` Worker — never as a Pages build command.
+
 ## Phase 3 · Custom domain (this is the DNS flip)
 
 1. Cloudflare Pages → project → **Custom domains → Set up a custom domain** →
