@@ -29,7 +29,7 @@
 ## Pages
 
 - [Home](https://serendevity.com/)
-- [Contact](https://serendevity.com/contact)
+- [Contact](https://serendevity.com/contact/)
 
 ## License & attribution
 

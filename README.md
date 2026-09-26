@@ -11,7 +11,7 @@ handles the contact form with Turnstile + native Email Service.
 
 ```
 ├── index.html            Home (about, services, mantra, process, truths)
-├── contact.html          Contact form → /api/contact Worker + map
+├── contact/index.html    Contact form → /api/contact Worker + map
 ├── 404.html              Friendly not-found
 ├── css/styles.css        The whole design system (self-hosted Geist type)
 ├── js/site.js            Year, form submit, lazy Turnstile
@@ -38,7 +38,7 @@ python3 -m http.server 8000      # no build step — it just works
 Install the CLI validators used during development:
 
 ```sh
-npm i -g html-validate            # npx html-validate index.html contact.html 404.html
+npm i -g html-validate            # npx html-validate index.html contact/index.html 404.html
 npm i -g lighthouse               # lighthouse http://localhost:8123/index.html --view=render
 python3 scripts/serve-live.py     # local server with gzip + cache (mimics Cloudflare)
 
@@ -66,7 +66,7 @@ npx wrangler deploy          # from repo root — every publish
 
 ## Validation targets
 
-- HTML5: `npx html-validate index.html contact.html 404.html` + manual W3C Nu check.
+- HTML5: `npx html-validate index.html contact/index.html 404.html` + manual W3C Nu check.
 - Lighthouse: 4×100 on the deployed site (verified locally: Home, Contact, and 404 each
   score 100 in accessibility / best-practices / SEO, performance 100 on Home & Contact
   with compression+cache headers — see `scripts/serve-live.py`; final numbers after

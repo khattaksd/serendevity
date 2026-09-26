@@ -1,6 +1,6 @@
 # Serendevity contact form — Cloudflare Worker
 
-The contact form on `/contact` posts to `POST /api/contact`, handled by this
+The contact form on `/contact/` posts to `POST /api/contact`, handled by this
 Worker. It verifies a Turnstile token and delivers email **natively via
 Cloudflare Email Service** — no third-party form handler, no SMTP provider.
 
@@ -11,7 +11,7 @@ Cloudflare Email Service** — no third-party form handler, no SMTP provider.
    - Hostnames: `serendevity.com` and `www.serendevity.com` (optionally add `*.serendevity.pages.dev` for previews)
    - Mode: Managed
    - Keep the **Site Key** and **Secret**.
-2. **Put the sitekey in the page** — edit `/contact.html` (repo root), replace the
+2. **Put the sitekey in the page** — edit `contact/index.html` — the real sitekey is already wired; if it changes, replace the
    test sitekey in the `.cf-turnstile` element:
    ```html
    <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY" data-action="serendevity_contact" ...>
