@@ -310,22 +310,10 @@ html.js .reveal.in-view {
   height: 34px;
   object-fit: contain;
 }
-.nav-menu {
-  position: relative;
-}
-.nav-menu summary {
-  display: none;
-  cursor: pointer;
-  padding: 0.45rem 0.85rem;
-  border: 1.5px solid var(--navy);
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-.nav-menu summary::marker,
-.nav-menu summary::-webkit-details-marker {
-  display: none;
-  content: "";
+.hdr-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 .nav-links {
   display: flex;
@@ -344,40 +332,9 @@ html.js .reveal.in-view {
 .nav-links a:hover {
   color: var(--navy);
 }
-.nav-links .btn {
-  margin-left: 0.35rem;
-}
 @media (max-width: 899px) {
-  .nav-menu summary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .nav-menu summary::before {
-    content: "";
-    width: 15px;
-    height: 2px;
-    border-radius: 2px;
-    background: currentColor;
-    box-shadow: 0 5px 0 0 currentColor, 0 -5px 0 0 currentColor;
-  }
-  .nav-menu:not([open]) .nav-links {
+  .hdr-right nav {
     display: none;
-  }
-  .nav-menu[open] .nav-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem 0;
-    position: absolute;
-    left: 0;
-    top: calc(100% + 6px);
-    min-width: 220px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    padding: 0.75rem 0.9rem;
   }
 }
 
