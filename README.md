@@ -54,8 +54,7 @@ Follow **`DEPLOY.md`** — the full, ordered runbook. Summary:
 1. **Phase 0 — decouple Netlify first** (disconnect GitHub auto-deploy on
    Netlify + GitHub, pause the site — it keeps serving as a static snapshot,
    so the domain stays up until you flip it).
-2. **Phase 1 — branch** — this repo's default is `master` (not `main`);
-   merge `rebuild` → `master` and deploy Pages from `master`.
+2. **Phase 1 — branch** — the repo's single branch is `main`; deploy Pages from `main`.
 3. **Phases 2–3 — Cloudflare Pages** — import repo (no build command, output
    dir `/`), attach `serendevity.com`, add a 301 `www → apex` redirect rule.
 4. **Phase 4 — form** — Turnstile widget + real sitekey in `contact.html`,

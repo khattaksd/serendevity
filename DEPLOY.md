@@ -4,10 +4,7 @@ Everything the site needs to go from this repo to https://serendevity.com.
 Do the phases in order. Commands tagged `[you]` need your Cloudflare/GitHub
 sessions; the rest are notes/verification.
 
-**Branch note:** this is an old repo — the default branch is **`master`**
-(not `main`). Deploy Pages from `master`. The current work lives on
-`rebuild`; merge it into `master` first (see Phase 0) so the deployed branch
-stays the one people expect.
+**Branch note:** the repo's single branch is **`main`** — deploy Pages from `main`.
 
 ## Phase 0 · Decouple Netlify (do FIRST — before any Cloudflare move)
 
@@ -42,18 +39,17 @@ downtime** — unlink first, delete only after Cloudflare is live.
 > Phase 3. Not recommended, but that's the ordering you explicitly asked for
 > is one you can take — just schedule Phases 1–3 in the same hour.
 
-## Phase 1 · Merge & push
+## Phase 1 · Branch
 
-1. `[you or me]` Merge `rebuild` into `master`:
-   - GitHub: open PR `rebuild → master` and merge; or locally:
-     `git checkout master && git merge rebuild && git push`.
-2. `git ls-remote origin master` — confirm the tip matches local.
+1. Ensure local `main` is at the tip you intend to deploy:
+   `git checkout main && git pull origin main`.
+2. `git ls-remote origin main` — confirm the tip matches local.
 
 ## Phase 2 · Create the Cloudflare Pages project `[you]`
 
 1. https://dash.cloudflare.com → **Workers & Pages → Create → Pages → Import repository**
 2. Connect the GitHub repo. Build settings:
-   - **Production branch:** `master`
+   - **Production branch:** `main`
    - **Build command:** *(leave empty — there is no build)*
    - **Build output directory:** `/`
    - Deploy. Project URL: `https://<project>.pages.dev` — sanity-check
