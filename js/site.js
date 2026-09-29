@@ -47,7 +47,7 @@
   /* ----- Contact form: AJAX to Formspree, inline feedback ----- */
   var contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    var FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // set at deploy
+    var FORMSPREE_ENDPOINT = "https://formspree.io/f/mdekblnk"; // set at deploy
     var errorBox = document.getElementById("form-error");
     var successBox = document.getElementById("form-success");
     var submitBtn = contactForm.querySelector('button[type="submit"]');
