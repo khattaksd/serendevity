@@ -3,18 +3,20 @@
 Static website for **Serendevity** — custom software & consulting,
 Canada (Mississauga, ON).
 
-Pure hand-written HTML5 + CSS + ~1KB of JS. No framework, no build step,
-no dependencies. Served by **Cloudflare Pages**; a small **Cloudflare Worker**
-handles the contact form with Turnstile + native Email Service.
+Pure hand-written HTML5 + CSS + ~2KB of JS. No framework, no build step,
+no dependencies. Served by **Workers static assets** (Pages) and deployed
+with the wrangler CLI; the contact form is delivered by **Formspree**
+(emails the owner), and **Email Routing** forwards all @serendevity.com
+mail to Gmail.
 
 ## Structure
 
 ```
 ├── index.html            Home (about, services, mantra, process, truths)
-├── contact/index.html    Contact form → /api/contact Worker + map
+├── contact/index.html    Contact form → Formspree + map
 ├── 404.html              Friendly not-found
 ├── css/styles.css        The whole design system (self-hosted Geist type)
-├── js/site.js            Year, form submit, lazy Turnstile
+├── js/site.js            Year, scroll-reveal, Formspree AJAX submit
 ├── fonts/geist/          Geist woff2 subsets (OFL) — 100% self-hosted
 ├── img/                  logo, mantra, CC photos (hero + Toronto) + webp variants
 ├── img/CREDITS.md        Image licenses & attributions (Creative Commons)
@@ -26,7 +28,6 @@ handles the contact form with Turnstile + native Email Service.
 ├── _headers              Security headers, CSP, cache policy
 ├── _redirects            Old Netlify-era URLs → new home
 ├── scripts/              serve-live.py (local dev server)
-└── workers/contact-form/ The form Worker (see its README)
 ```
 
 ## Local development
@@ -59,10 +60,10 @@ npx wrangler deploy          # from repo root — every publish
 
 - `wrangler.jsonc` + `.assetsignore` live at the repo root (see DEPLOY.md
   for the post-deploy sanity checks).
-- Custom domain + www→apex redirect: Workers dashboard → serendevity →
-  Domains & Routes, then a Redirect Rule (steps in DEPLOY.md).
-- Contact form: separate `/api/*` Worker in `workers/contact-form/` (its
-  README has the buttons; needs Turnstile widget + Email Service setup).
+- Custom domain + www→apex redirect already live on `serendevity.com`.
+- Contact form → **Formspree** (endpoint in `js/site.js` + `contact/index.html`;
+  delivers submissions to the owner's inbox). **Email Routing** forwards all
+  @serendevity.com mail to Gmail (steps in DEPLOY.md).
 
 ## Validation targets
 

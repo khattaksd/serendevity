@@ -1,6 +1,7 @@
 /* Serendevity — site.js
  * Small, dependency-free. Everything here is progressive enhancement:
- * without JS the site is fully readable and navigable.
+ * without JS the site is fully readable and navigable, and the contact
+ * form still submits (Formspree's confirmation screen).
  */
 (function () {
   "use strict";
@@ -28,8 +29,7 @@
         { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
       );
       reveals.forEach(function (el) { io.observe(el); });
-      /* Safety net: if anything is still hidden shortly after load (e.g. an
-         observer edge case), reveal it rather than leaving the page blank. */
+      /* Safety net: never leave anything stuck hidden. */
       window.setTimeout(function () {
         reveals.forEach(function (el) { el.classList.add("in-view"); });
       }, 4000);
@@ -44,93 +44,61 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ----- Turnstile: load the widget only when the visitor engages with the form ----- */
-  var widget = document.querySelector(".cf-turnstile");
-  if (widget) {
-    var form = document.getElementById("contact-form");
-    var loaded = false;
-    function loadTurnstile() {
-      if (loaded) return;
-      loaded = true;
-      var s = document.createElement("script");
-      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-      s.async = true;
-      s.defer = true;
-      document.head.appendChild(s);
-    }
-    if (form) {
-      ["pointerdown", "focusin", "keydown"].forEach(function (ev) {
-        form.addEventListener(ev, loadTurnstile, { passive: true });
-      });
-    } else {
-      loadTurnstile();
-    }
-  }
-
-  /* ----- Contact form ----- */
+  /* ----- Contact form: AJAX to Formspree, inline feedback ----- */
   var contactForm = document.getElementById("contact-form");
   if (contactForm) {
+    var FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // set at deploy
     var errorBox = document.getElementById("form-error");
     var successBox = document.getElementById("form-success");
     var submitBtn = contactForm.querySelector('button[type="submit"]');
 
     function showError(msg) {
-      if (errorBox) {
-        errorBox.textContent = msg;
-        errorBox.style.display = "block";
-      }
+      if (errorBox) { errorBox.textContent = msg; errorBox.style.display = "block"; }
       if (successBox) successBox.style.display = "none";
-      resetTurnstile();
     }
     function showSuccess() {
       if (errorBox) errorBox.style.display = "none";
       if (successBox) successBox.style.display = "block";
-      resetTurnstile();
-    }
-    /* Turnstile tokens are single-use: after every attempt, reset the widget
-       so a fresh token exists for the next submit. */
-    function resetTurnstile() {
-      try {
-        if (window.turnstile && window.turnstile.reset) window.turnstile.reset();
-      } catch (e) { /* widget not loaded yet — nothing to reset */ }
     }
 
     contactForm.addEventListener("submit", function (ev) {
       ev.preventDefault();
       if (errorBox) errorBox.style.display = "none";
 
-      var tokenInput = document.querySelector('input[name="cf-turnstile-response"]');
-      var cfToken = tokenInput ? tokenInput.value : "";
-
       var data = {
         name: document.getElementById("f-name").value.trim(),
         company: document.getElementById("f-company").value.trim(),
         email: document.getElementById("f-email").value.trim(),
         message: document.getElementById("f-message").value.trim(),
-        company_url: document.getElementById("f-company-url").value.trim(),
-        cf_turnstile_response: cfToken
+        _gotcha: document.getElementById("f-gotcha").value.trim()
       };
+
+      /* Honeypot trip: pretend success, do nothing. */
+      if (data._gotcha) { showSuccess(); contactForm.reset(); return; }
 
       if (submitBtn) submitBtn.disabled = true;
 
-      fetch(contactForm.action, {
+      fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-        credentials: "same-origin"
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
       })
         .then(function (res) {
-          return res.json().then(function (body) {
-            if (res.ok && body.success) {
+          return res.json().catch(function () { return {}; }).then(function (body) {
+            if (res.ok) {
               showSuccess();
               contactForm.reset();
             } else {
-              showError((body && body.error) || "Something went sideways. Please email us directly — contact@serendevity.com.");
+              showError((body && body.errors && body.errors[0] && body.errors[0].message) ||
+                "Hmm, that didn't go through. Please email us directly — contact@serendevity.com.");
             }
           });
         })
         .catch(function () {
-          showError("Couldn't reach the server. Please email us directly — contact@serendevity.com.");
+          showError("Couldn't reach the form service. Please email us directly — contact@serendevity.com.");
         })
         .finally(function () {
           if (submitBtn) submitBtn.disabled = false;

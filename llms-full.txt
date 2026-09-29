@@ -47,7 +47,7 @@ Good. Cheap. Fast. — you get to pick any two, and we will be honest about the 
 
 - Website: https://serendevity.com (apex is canonical; www redirects to apex).
 - The site is a pure static HTML/CSS/JS site served by Cloudflare Pages. No blog, no CMS.
-- A contact form on /contact/ posts to a Cloudflare Worker which validates a Turnstile token and delivers email natively via Cloudflare Email Service. No third-party form services.
+- A contact form on /contact/ is delivered by Formspree, which emails the owner; submissions are spam-checked Formspree-side (with our honeypot field). All @serendevity.com mail is forwarded to the owner's Gmail via Cloudflare Email Routing (inbound only — nothing ever sends as @serendevity.com).
 - Analytics: none by default (privacy-friendly Cloudflare Web Analytics optional).
 - Photography on the site is from Wikimedia Commons (CC BY 2.0 / CC BY-SA 4.0); full attributions in img/CREDITS.md. Icons: Lucide (ISC). Font: Geist (OFL).
 

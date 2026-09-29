@@ -5,6 +5,7 @@
 ## What we do
 
 - **Web applications** — SaaS platforms, dashboards, portals, internal tools. Boringly reliable.
+- **Forms** — the contact form posts to Formspree, which forwards submissions to the owner's inbox. All @serendevity.com email is forwarded to Gmail via Cloudflare Email Routing (inbound only).
 - **Mobile apps** — iOS, Android and progressive web apps.
 - **APIs & integrations** — connecting payments, CRMs, logistics and legacy systems.
 - **Cloud, DevOps & infrastructure** — deployments, monitoring, cost-managed cloud.

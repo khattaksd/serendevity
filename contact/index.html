@@ -60,8 +60,9 @@
 
   <section class="section" aria-labelledby="form-title">
     <div class="container contact-grid">
-      <form class="form-panel reveal" style="--d:0" id="contact-form" action="/api/contact" method="post" aria-labelledby="form-title">
+      <form class="form-panel reveal" style="--d:0" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post" aria-labelledby="form-title" novalidate>
         <h2 id="form-title" class="visually-hidden">Send us a message</h2>
+        <p class="form-privacy">Submissions are delivered by <a href="https://formspree.io/">Formspree</a> straight to our inbox — no storage, no tracking, no newsletter checkbox.</p>
         <div class="form-grid-2">
           <div class="form-field">
             <label for="f-name">Name <span aria-hidden="true">*</span></label>
@@ -81,20 +82,19 @@
             <label for="f-message">Message <span aria-hidden="true">*</span></label>
             <textarea id="f-message" name="message" rows="6" required maxlength="4000" spellcheck="true" placeholder="What are you building — or what's on fire?"></textarea>
           </div>
-          <!-- Honeypot: real humans never see it. Bots love it. -->
+          <!-- Honeypot (Formspree convention): real humans never see it. -->
           <div class="hp-field" aria-hidden="true">
-            <label for="f-company-url">Company URL</label>
-            <input id="f-company-url" name="company_url" type="url" tabindex="-1" autocomplete="off">
+            <label for="f-gotcha">Leave this field empty</label>
+            <input id="f-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
           </div>
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFEl8vJKcXIvGJz2" data-action="serendevity_contact" data-theme="light"></div>
           <p class="form-error" id="form-error" role="alert"></p>
           <div class="form-success" id="form-success" role="status">
             <strong>Thanks — it's in our inbox.</strong> We reply within one business day, usually faster. If it's urgent, nothing is faster than emailing us directly.
           </div>
           <button class="btn btn-primary form-submit" type="submit">Send message</button>
-          <p class="form-privacy">No tracking pixels, no newsletter checkbox, no “keep in touch” guilt. Your message goes straight to <a href="mailto:contact@serendevity.com">contact@serendevity.com</a> and nowhere else. Protected by a Cloudflare challenge — the friendly one.</p>
+          <p class="form-privacy">No tracking pixels, no newsletter checkbox, no “keep in touch” guilt. Your message is delivered by <a href="https://formspree.io/">Formspree</a> straight to our inbox and nowhere else — spam-checked on their side, not ours.</p>
         </div>
-        <noscript><p class="form-privacy"><strong>Heads up:</strong> the bot-check on this form needs JavaScript. No worries — just email us directly at <a href="mailto:contact@serendevity.com">contact@serendevity.com</a>.</p></noscript>
+        <noscript><p class="form-privacy"><strong>Heads up:</strong> this form uses JavaScript to show inline success/error feedback; without it the submit still works — you'll be taken to Formspree's confirmation screen. Or just email us at <a href="mailto:contact@serendevity.com">contact@serendevity.com</a>.</p></noscript>
       </form>
 
       <div class="info-panel">
